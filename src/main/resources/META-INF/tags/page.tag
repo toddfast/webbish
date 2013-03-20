@@ -1,5 +1,5 @@
 <%@tag description="page" pageEncoding="UTF-8" 
-	   import="me.dotter.service.builder.server.ui.api.*"
+	   import="com.toddfast.webbish.*"
 	   body-content="scriptless"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -27,17 +27,18 @@
 }
 %>
 <jsp:useBean id="configuration" 
-			 type="me.dotter.service.builder.server.ui.api.Configuration"
+			 type="com.toddfast.webbish.Configuration"
 			 scope="request"/>
 <jsp:useBean id="helper"
-			 type="me.dotter.service.builder.server.ui.api.PageTagHelper"
+			 type="com.toddfast.webbish.PageTagHelper"
 			 scope="request"/>
 
 <%-- Initialize important variables used throughout --%>
 <c:set var="static" value="${configuration.staticResourcePath}"/>
 
 <%-- any content can be specified here e.g.: --%>
-<%@include file="/WEB-INF/jsp/jspf/__top.jspf"%>
+<%--<%@include file="/WEB-INF/jsp/jspf/__top.jspf"%>--%>
+<%@include file="/META-INF/resources/WEB-INF/jsp/jspf/__top.jspf"%>
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -163,5 +164,7 @@
 	</jsp:include>
 
 
-<%@include file="/WEB-INF/jsp/jspf/analytics.jspf" %>
-<%@include file="/WEB-INF/jsp/jspf/__bottom.jspf"%>
+<%--<%@include file="/WEB-INF/jsp/jspf/analytics.jspf" %>--%>
+<%@include file="/META-INF/resources/WEB-INF/jsp/jspf/analytics.jspf" %>
+<%--<%@include file="/WEB-INF/jsp/jspf/__bottom.jspf"%>--%>
+<%@include file="/META-INF/resources/WEB-INF/jsp/jspf/__bottom.jspf"%>
