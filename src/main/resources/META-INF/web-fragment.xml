@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-fragment
+	version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+						http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+	<jsp-config>
+
+		<jsp-property-group>
+			<display-name>All page JSPs</display-name>
+			<url-pattern>/WEB-INF/jsp/page/*</url-pattern>
+			<page-encoding>UTF-8</page-encoding>
+			<include-prelude>/WEB-INF/jsp/jspf/__init.jspf</include-prelude>
+			<trim-directive-whitespaces>true</trim-directive-whitespaces>
+			<error-on-undeclared-namespace>false</error-on-undeclared-namespace>
+		</jsp-property-group>
+
+		<jsp-property-group>
+			<display-name>No scripting on pages</display-name>
+			<url-pattern>*.jsp</url-pattern>
+			<scripting-invalid>true</scripting-invalid>
+		</jsp-property-group>
+
+		<jsp-property-group>
+			<display-name>Allow scripting on raw JSPs</display-name>
+			<url-pattern>/WEB-INF/jsp/*</url-pattern>
+			<scripting-invalid>false</scripting-invalid>
+		</jsp-property-group>
+
+	</jsp-config>
+
+</web-fragment>

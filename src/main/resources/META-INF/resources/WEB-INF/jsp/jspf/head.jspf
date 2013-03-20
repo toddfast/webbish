@@ -1,0 +1,10 @@
+
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="google-site-verification" content=""/>
+
+		<%-- Load Adobe TypeKit, e.g. --%>
+		<%--
+		<script type="text/javascript" src="http://use.typekit.com/xxxxxxx.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){if (window.console) window.console.log("TypeKit error: ",e)}</script>
+		--%>
