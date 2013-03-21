@@ -22,6 +22,8 @@
 
 // Global require.js configuration (defined before loading require.js)
 var require = require || {};
+
+// Allow easy merging of configuration info before require.js is loaded
 require.merge = function(from) {
 
 	function merge(to, from) {
@@ -39,16 +41,42 @@ require.merge = function(from) {
     return merge(this,from);
 };
 
-// Create a one-shot define() function for use in config.js
-var define=function(dependencies, factoryFn) {
-	// Call the factory, ignoring the dependencies
-	factoryFn(require);
+// Create a one-shot pseudo-`define()` function for use in Webbish's
+// application-defined config.js script
+var define=function(dependencies, moduleFactoryFn) {
 
-	// Unset this define function once used
+	if (typeof dependencies === "function") {
+		moduleFactoryFn=dependencies;
+	}
+
+	// Alias the merge function as config() for this one call in order to mimic
+	// the typical way of configuring "naked" require.js. If config.js
+	// calls require.config({ config: ... }), this function alias will be
+	// automatically removed. Otherwise, we'll remove it ourselves afterward.
+	require.config = require.merge;
+
+	// Call the pseudo-module's factory function with our pseudo-requirejs
+	// object, ignoring the declared dependencies (which are just for
+	// formalism's sake)
+	moduleFactoryFn(require);
+
+	// Remove the config() alias if it wasn't overwritten by a config
+	// property in config.js
+	if (typeof require.config === "function") {
+		delete require.config;
+	}
+
+	// Clean up and remove our custom merge() method
+	delete require.merge;
+
+	// Unset this define function once used to make room for require.js's
+	// define() function
 	define=undefined;
+
+	console.log("Effective require.js configuration:",require);
 }
 
-// Merge the base require.js configuration
+// Define the base require.js configuration
 require.merge({
 	baseUrl: "static/",
 	paths: {
@@ -108,3 +136,7 @@ require.merge({
 		require(["js/page/"+moduleName]);
 	}
 });
+
+// config.js will be called AFTER this point and call the pseudo-define()
+// function above. Then require.js will be called and it will process the
+// contents of `var require` and replace it with a function.
