@@ -85,6 +85,7 @@
 		<script data-page="${id}" src="${static}/js/init.js"></script>
 		<script src="${static}/js/config.js"></script>
 		<script src="${static}/js/lib/require+jquery/require+jquery.js"></script>
+
 		<%-- Define a module for the page --%>
 		<script type="text/javascript">
 			define("page",[],function() {
