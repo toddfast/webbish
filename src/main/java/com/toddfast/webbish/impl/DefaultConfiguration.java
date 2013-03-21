@@ -1,6 +1,7 @@
 package com.toddfast.webbish.impl;
 
 import com.toddfast.webbish.Configuration;
+import javax.servlet.ServletContext;
 
 /**
  *
@@ -10,73 +11,73 @@ public class DefaultConfiguration implements Configuration {
 
 
 	@Override
-	public String getStaticResourcePath() {
-		return "static";
+	public String getStaticResourcePath(ServletContext context) {
+		return context.getContextPath()+"/static";
 	}
 
 
 	@Override
-	public String getPageTitleFormatString() {
+	public String getPageTitleFormatString(ServletContext context) {
 		return "%s";
 	}
 
 
 	@Override
-	public String getMetaCopyright() {
+	public String getMetaCopyright(ServletContext context) {
 		return "";
 	}
 
 
 	@Override
-	public String getMetaSection() {
+	public String getMetaSection(ServletContext context) {
 		return "";
 	}
 
 
 	@Override
-	public String getMetaRobots() {
+	public String getMetaRobots(ServletContext context) {
 		return "index, follow";
 	}
 
 
 	@Override
-	public String getMetaRevisitAfter() {
+	public String getMetaRevisitAfter(ServletContext context) {
 		return "";
 	}
 
 
 	@Override
-	public String getMetaAuthor() {
+	public String getMetaAuthor(ServletContext context) {
 		return "";
 	}
 
 
 	@Override
-	public String getMetaDistribution() {
+	public String getMetaDistribution(ServletContext context) {
 		return "global";
 	}
 
 
 	@Override
-	public String getMetaDescription() {
+	public String getMetaDescription(ServletContext context) {
 		return "";
 	}
 
 
 	@Override
-	public String getMetaKeywords() {
+	public String getMetaKeywords(ServletContext context) {
 		return "";
 	}
 
 
 	@Override
-	public String getMetaViewport() {
+	public String getMetaViewport(ServletContext context) {
 		return "width=device-width, initial-scale=1.0";
 	}
 
 
 	@Override
-	public String getMetaFacebookPageID() {
+	public String getMetaFacebookPageID(ServletContext context) {
 		return "";
 	}
 }

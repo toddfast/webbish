@@ -1,5 +1,7 @@
 package com.toddfast.webbish;
 
+import javax.servlet.ServletContext;
+
 
 
 /**
@@ -13,82 +15,82 @@ public interface Configuration {
 	 *
 	 *
 	 */
-	public String getStaticResourcePath();
+	public String getStaticResourcePath(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getPageTitleFormatString();
+	public String getPageTitleFormatString(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getMetaCopyright();
+	public String getMetaCopyright(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getMetaSection();
+	public String getMetaSection(ServletContext context);
 
 
 	/**
 	 * index, follow
 	 *
 	 */
-	public String getMetaRobots();
+	public String getMetaRobots(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getMetaRevisitAfter();
+	public String getMetaRevisitAfter(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getMetaAuthor();
+	public String getMetaAuthor(ServletContext context);
 
 
 	/**
 	 * global
 	 *
 	 */
-	public String getMetaDistribution();
+	public String getMetaDistribution(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getMetaDescription();
+	public String getMetaDescription(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getMetaKeywords();
+	public String getMetaKeywords(ServletContext context);
 
 
 	/**
 	 * width=device-width, initial-scale=1.0
 	 *
 	 */
-	public String getMetaViewport();
+	public String getMetaViewport(ServletContext context);
 
 
 	/**
 	 *
 	 *
 	 */
-	public String getMetaFacebookPageID();
+	public String getMetaFacebookPageID(ServletContext context);
 }

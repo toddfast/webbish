@@ -34,7 +34,7 @@
 			 scope="request"/>
 
 <%-- Initialize important variables used throughout --%>
-<c:set var="static" value="${configuration.staticResourcePath}"/>
+<c:set var="static" value="<%= configuration.getStaticResourcePath(config.getServletContext()) %>"/>
 
 <%-- any content can be specified here e.g.: --%>
 <%--<%@include file="/WEB-INF/jsp/jspf/__top.jspf"%>--%>
@@ -43,19 +43,19 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<meta name="copyright" content="${configuration.metaCopyright}" />
-		<meta name="section" content="${configuration.metaSection}" />
-		<meta name="robots" content="${configuration.metaRobots}" />
-		<meta name="revisit-after" content="${configuration.metaRevisitAfter}" />
-		<meta name="author" content="${configuration.metaAuthor}" />
-		<meta name="distribution" content="${configuration.metaDistribution}" />
-		<meta name="description" content="${configuration.metaDescription}" />
-		<meta name="keywords" content="${configuration.metaKeywords}" />
-		<meta name="viewport" content="${configuration.metaViewport}">
+		<meta name="copyright" content="<%= configuration.getMetaCopyright(config.getServletContext()) %>" />
+		<meta name="section" content="<%= configuration.getMetaSection(config.getServletContext()) %>" />
+		<meta name="robots" content="<%= configuration.getMetaRobots(config.getServletContext()) %>" />
+		<meta name="revisit-after" content="<%= configuration.getMetaRevisitAfter(config.getServletContext()) %>" />
+		<meta name="author" content="<%= configuration.getMetaAuthor(config.getServletContext()) %>" />
+		<meta name="distribution" content="<%= configuration.getMetaDistribution(config.getServletContext()) %>" />
+		<meta name="description" content="<%= configuration.getMetaDescription(config.getServletContext()) %>" />
+		<meta name="keywords" content="<%= configuration.getMetaKeywords(config.getServletContext()) %>" />
+		<meta name="viewport" content="<%= configuration.getMetaViewport(config.getServletContext()) %>">
 
 		<c:choose>
-		<c:when test="${configuration.metaFacebookPageID!=null && !configuration.metaFacebookPageID.isEmpty()}">
-		<meta name="fb:page_id" content="${configuration.metaFacebookPageID}"/>
+		<c:when test="<%= configuration.getMetaFacebookPageID(config.getServletContext())!=null && !configuration.getMetaFacebookPageID(config.getServletContext()).isEmpty() %>">
+		<meta name="fb:page_id" content="<%= configuration.getMetaFacebookPageID(config.getServletContext()) %>"/>
 		</c:when>
 		<c:otherwise>
 		</c:otherwise>
@@ -77,7 +77,7 @@
 		<title>${fullTitle}</title>
 		</c:when>
 		<c:otherwise>
-		<title><%= String.format(configuration.getPageTitleFormatString(),title) %></title>
+		<title><%= String.format(configuration.getPageTitleFormatString(config.getServletContext()),title) %></title>
 		</c:otherwise>
 		</c:choose>
 
