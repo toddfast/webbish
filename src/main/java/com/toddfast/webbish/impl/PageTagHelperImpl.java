@@ -1,5 +1,6 @@
 package com.toddfast.webbish.impl;
 
+import com.conga.nu.AllowField;
 import com.conga.nu.Scope;
 import com.conga.nu.ServiceProvider;
 import com.toddfast.webbish.Configuration;
@@ -27,6 +28,10 @@ public class PageTagHelperImpl implements PageTagHelper {
 	 */
 	@Override
 	public Configuration getConfiguration(ServletContext context) {
+
+		final String HELP_URL=
+			"https://github.com/toddfast/webbish/wiki/Runtime-Configuration";
+
 		Configuration configuration=null;
 		try {
 			// Try to load the configuration
@@ -34,8 +39,9 @@ public class PageTagHelperImpl implements PageTagHelper {
 		}
 		catch (com.conga.nu.ServiceInstantiationException e) {
 			if (context!=null) {
-				context.log("Could not find instance of "+
-					Configuration.class.getName()+"; using defaults",e);
+				context.log("Webbish could not find a service provider for "+
+					Configuration.class.getName()+
+					"; using default (to resolve see "+HELP_URL+")");
 			}
 
 			// Create a default configuration
