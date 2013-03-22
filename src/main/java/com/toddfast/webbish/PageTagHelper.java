@@ -21,4 +21,10 @@ public interface PageTagHelper {
 	public String resolveInclude(ServletContext context, String value,
 		String defaultValue);
 
+
+	/**
+	 *
+	 *
+	 */
+//	public String serializeModel(ServletContext context, Object model);
 }

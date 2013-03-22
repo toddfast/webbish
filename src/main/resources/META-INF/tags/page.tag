@@ -92,8 +92,11 @@
 				return {
 					id: "${id}",
 					staticResourceBaseURL: "${static}",
-					themes: "${themes}"
+					themes: "${themes}",
+					parameters: <% com.toddfast.webbish.impl.PageTagHelperImpl.toJSON(
+						out,request.getAttribute("it"),"\t\t\t\t\t"); %>
 				};
+
 			});
 		</script>
 
