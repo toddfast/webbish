@@ -109,7 +109,7 @@
 		<link rel="stylesheet" type="text/css" href="${themedir}/theme.css" media="all" />
 		<!--<link rel="stylesheet" type="text/css" href="${themedir}/css/page/${id}.css" media="all" />-->
 		<script type="text/javascript">
-			define("${fn:trim(theme)}",[],function() {
+			define("theme-${fn:trim(theme)}",[],function() {
 				return { baseURL: "${static}/theme/${fn:trim(theme)}" };
 			});
 		</script>
