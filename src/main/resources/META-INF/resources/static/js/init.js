@@ -78,11 +78,11 @@ var define=function(dependencies, moduleFactoryFn) {
 
 // Define the base require.js configuration
 require.merge({
-	baseUrl: "static/",
+	baseUrl: "static/js/",
 	paths: {
-		"js-template": "js/lib/js-template/js-template",
-		"modernizr": "js/lib/modernizr/modernizr-2.6.2",
-		"bootstrap": "js/lib/bootstrap/bootstrap"
+		"js-template": "lib/js-template/js-template",
+		"modernizr": "lib/modernizr/modernizr-2.6.2",
+		"bootstrap": "lib/bootstrap/bootstrap"
 	},
 
 	shim: {
@@ -96,7 +96,7 @@ require.merge({
 
 	map: {
 		"*": {
-			"css": "js/lib/require-css/css"
+			"css": "lib/require-css/css"
 		}
 	},
 
@@ -133,7 +133,7 @@ require.merge({
 			|| $("body:first").attr("id")
 			|| $("html:first").attr("id");
 
-		require(["js/page/"+moduleName]);
+		require(["page/"+moduleName]);
 	}
 });
 
