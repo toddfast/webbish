@@ -782,12 +782,19 @@ __define("js-template",["jquery"],function(jQuery) {
 					// Ignore
 				}
 
-				console.error("Exception processing template at element ",
-					template,
-					":\n",
-					e.message,
-					"\nin ",
-					functionDeclaration);
+				// console.error("Exception processing template at element ",
+				// 	template,
+				// 	":\n",
+				// 	e.message,
+				// 	"\nin ",
+				// 	functionDeclaration);
+
+				console.group();
+				console.error(e.message);
+				console.groupCollapsed("in %o",exprFunction);
+				console.log("at %o",template);
+				// console.log("in %o",functionDeclaration);
+				console.groupEnd();
 			}
 			return JsEvalContext.globals_[GLOB_default];
 		}

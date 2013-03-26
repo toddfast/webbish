@@ -82,9 +82,9 @@
 		</c:choose>
 
 		<%-- Bootstrap the require.js and all modules --%>
-		<script data-page="${id}" src="${static}/js/init.js"></script>
-		<script src="${static}/js/config.js"></script>
-		<script src="${static}/js/lib/require+jquery/require+jquery.js"></script>
+		<script type="text/javascript" data-page="${id}" src="${static}/js/init.js"></script>
+		<script type="text/javascript" src="${static}/js/config.js"></script>
+		<script type="text/javascript" src="${static}/js/lib/require+jquery/require+jquery.js"></script>
 
 		<%-- Define a module for the page --%>
 		<script type="text/javascript">
