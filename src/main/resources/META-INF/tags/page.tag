@@ -8,6 +8,7 @@
 <%@attribute name="themes" required="true" rtexprvalue="true"%>
 <%@attribute name="anonymous" required="true" rtexprvalue="false"%>
 <%@attribute name="title" required="true" rtexprvalue="true"%>
+<%@attribute name="cssClass" required="false" rtexprvalue="false"%>
 
 <%@attribute name="head" required="false" rtexprvalue="true"%>
 <%@attribute name="header" required="false" rtexprvalue="true"%>
@@ -114,6 +115,8 @@
 			});
 		</script>
 		</c:forTokens>
+
+		<!-- Page styles -->
 		<link rel="stylesheet" type="text/css" href="${themedir}/css/page/${id}.css" media="all" />
 	</head>
 
@@ -122,10 +125,10 @@
 
 <c:choose>
 <c:when test="${allowAnonymous==true}">
-<body id="${id}" class="anonymous">
+<body id="${id}" class=" ${cssClass} anonymous">
 </c:when>
 <c:otherwise>
-<body id="${id}" class="not-anonymous">
+<body id="${id}" class=" ${cssClass} not-anonymous">
 </c:otherwise>
 </c:choose>
 	<!--[if lt IE 7]>
