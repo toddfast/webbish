@@ -1,4 +1,5 @@
-<%@ page isErrorPage="true" import="java.io.*" contentType="text/plain"%>
+<%@ page isErrorPage="true" import="java.io.*" contentType="text/plain"
+		 session="false"%>
 <%
 	StringWriter stringWriter = new StringWriter();
 	PrintWriter printWriter = new PrintWriter(stringWriter);
